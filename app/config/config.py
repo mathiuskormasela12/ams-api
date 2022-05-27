@@ -1,11 +1,12 @@
 # ========== App Config ==========
+# import all packages
+from pydantic import BaseSettings
 
-appConfig = {
-	'PORT': 3000,
-	'HOST': 'YOUR_HOST_NAME',
-	'DB_URI': 'YOUR_DB_URI',
-	'ENV': 'dev',
-	'Clients': [
-		'YOUR_CLIENT_URL'
-	]
-}
+class Settings(BaseSettings):
+	port: int
+	host: str
+	env: str
+	db_uri: str
+
+	class Config:
+		env_file = ".env"

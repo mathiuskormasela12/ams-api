@@ -1,12 +1,14 @@
 # ========== Main ==========
 # import all packages
 import uvicorn
-from app.config.config import appConfig
+from app.config.config import Settings
+
+settings = Settings()
 
 if __name__ == '__main__' :
 	reload = False
 
-	if appConfig['ENV'] == 'dev' :
+	if settings.env == 'dev' :
 		reload = True
 		
-	uvicorn.run('app.app:app', host=appConfig['HOST'], port=appConfig['PORT'], reload=reload)
+	uvicorn.run('app.app:app', host=settings.host, port=settings.port, reload=reload)

@@ -1,8 +1,7 @@
 # ========== Auth Routes ==========
 # import all packages
 from fastapi import APIRouter
-from fastapi.middleware.cors import CORSMiddleware
-from app.config.db import db
+from app.models.db import db
 from app.models.user import User
 from app.helpers.hashed_password import generate_hash
 
