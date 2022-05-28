@@ -8,3 +8,7 @@ class User(BaseModel) :
 	username: str
 	photo: str = 'nophoto.png'
 	password: str
+
+class AuthForm(BaseModel) :
+	username: str
+	password: str
